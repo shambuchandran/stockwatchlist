@@ -1,6 +1,7 @@
 package com.example.stockwatchlist.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,9 +61,8 @@ class StocksFragment : Fragment() {
 
         //loadInitialStocks()
         stockViewModel.stocks.observe(viewLifecycleOwner, Observer {
-            if (searchView.query.isNullOrEmpty()) {
-                stockAdapter.updateStocks(it)
-            }
+            Log.d("stocks fragment",it.toString())
+            stockAdapter.updateStocks(it)
         })
         stockViewModel.isLoading.observe(viewLifecycleOwner, Observer { isLoading ->
             progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE

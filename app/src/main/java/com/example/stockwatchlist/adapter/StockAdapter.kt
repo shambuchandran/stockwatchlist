@@ -1,5 +1,6 @@
 package com.example.stockwatchlist.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ class StockAdapter(private var stocks:List<Stock>,private val watchListViewModel
 
     override fun onBindViewHolder(holder: StockViewHolder, position: Int) {
         val stock = stocks[position]
+        Log.d("stocks adaptor",stock.toString())
         holder.symbol.text = stock.symbol
         holder.name.text = stock.name
         holder.type.text = stock.type
@@ -53,6 +55,7 @@ class StockAdapter(private var stocks:List<Stock>,private val watchListViewModel
     }
     fun updateStocks(newStocks: List<Stock>) {
         stocks = newStocks
+        Log.d("stocks adaptor updateStocks",stocks.toString())
         notifyDataSetChanged() }
 
 }

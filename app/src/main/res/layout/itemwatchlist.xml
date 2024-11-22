@@ -8,7 +8,7 @@
     android:background="@android:color/black">
 
     <LinearLayout
-        android:id="@+id/text_container"
+        android:id="@+id/watchlist_text_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/stock_symbol"
+            android:id="@+id/watchlist_stock_symbol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Symbol"
@@ -26,7 +26,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/stock_name"
+            android:id="@+id/watchlist_stock_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -35,7 +35,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/stock_type"
+            android:id="@+id/watchlist_stock_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -49,12 +49,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_container"
+        app:layout_constraintTop_toTopOf="@+id/watchlist_text_container"
         android:gravity="center_vertical"
         android:layout_marginTop="8dp">
 
         <TextView
-            android:id="@+id/stock_currency"
+            android:id="@+id/watchlist_stock_currency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Currency: USD"
@@ -63,7 +63,7 @@
             android:layout_marginEnd="16dp" />
 
         <TextView
-            android:id="@+id/stock_price"
+            android:id="@+id/watchlist_stock_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Latest Price"
@@ -72,7 +72,7 @@
             android:layout_marginEnd="8dp" />
 
         <ImageButton
-            android:id="@+id/delete_button"
+            android:id="@+id/watchlist_delete_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"

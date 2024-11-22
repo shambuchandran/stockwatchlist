@@ -1,5 +1,6 @@
 package com.example.stockwatchlist.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,6 +33,7 @@ class StockViewModel(private val repository: StockRepository) : ViewModel() {
                 val stockQuotes = repository.getTimeSeriesDaily(symbol)
                 if (stockQuotes.isNotEmpty()) {
                     _stocks.value = stockQuotes
+                    Log.d("stocks viewmodel",_stocks.value.toString())
                 } else {
                     _error.value = "No data found or API rate limit reached"
                 }

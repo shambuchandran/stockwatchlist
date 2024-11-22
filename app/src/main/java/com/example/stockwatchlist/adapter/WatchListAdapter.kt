@@ -16,12 +16,12 @@ class WatchListAdapter(
 ) : RecyclerView.Adapter<WatchListAdapter.WatchListViewHolder>() {
 
     inner class WatchListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val symbolTextView: TextView = itemView.findViewById(R.id.stock_symbol)
-        private val nameTextView: TextView = itemView.findViewById(R.id.stock_name)
-        private val typeTextView: TextView = itemView.findViewById(R.id.stock_type)
-        private val currencyTextView: TextView = itemView.findViewById(R.id.stock_currency)
-        private val priceTextView: TextView = itemView.findViewById(R.id.stock_price)
-        private val deleteButton: ImageButton = itemView.findViewById(R.id.delete_button)
+        private val symbolTextView: TextView = itemView.findViewById(R.id.watchlist_stock_symbol)
+        private val nameTextView: TextView = itemView.findViewById(R.id.watchlist_stock_name)
+        private val typeTextView: TextView = itemView.findViewById(R.id.watchlist_stock_type)
+        private val currencyTextView: TextView = itemView.findViewById(R.id.watchlist_stock_currency)
+        private val priceTextView: TextView = itemView.findViewById(R.id.watchlist_stock_price)
+        private val deleteButton: ImageButton = itemView.findViewById(R.id.watchlist_delete_button)
 
         fun bind(stock: WatchListStocks) {
             symbolTextView.text = stock.symbol

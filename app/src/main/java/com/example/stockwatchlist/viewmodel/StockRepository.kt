@@ -6,17 +6,13 @@ import com.example.stockwatchlist.api.Stock
 
 class StockRepository(private val apiService: AlphaVantageApi) {
 
-    companion object {
-        private const val TAG = "StockRepository"
-    }
-
     suspend fun getTimeSeriesDaily(symbol: String): List<Stock> {
         try {
             val response = apiService.getTimeSeriesDaily(symbol = symbol)
-            Log.d(TAG, "API Response: $response")
+            Log.d("StockRepository", "API Response: $response")
 
             if (response.metaData == null || response.timeSeries == null) {
-                Log.e(TAG, "Meta Data or Time Series is null in the response")
+                Log.e("StockRepository", "Meta Data or Time Series is null in the response")
                 if (response.metaData == null && response.timeSeries == null) {
                     throw Exception("API rate limit reached or invalid API key. Please check your usage or upgrade to a premium plan.")
                 }
@@ -24,7 +20,7 @@ class StockRepository(private val apiService: AlphaVantageApi) {
             }
 
             val timeSeries = response.timeSeries
-            Log.d(TAG, "Received ${timeSeries.size} daily data points")
+            Log.d("StockRepository", "Received ${timeSeries.size} daily data points")
 
             return timeSeries.map { (date, dailyData) ->
                 Stock(
@@ -36,7 +32,7 @@ class StockRepository(private val apiService: AlphaVantageApi) {
                 )
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Error fetching daily time series: ${e.message}")
+            Log.e("StockRepository", "Error fetching daily time series: ${e.message}")
             return emptyList()
         }
     }
